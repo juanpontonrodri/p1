@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>p1.html</title>
+        <link rel="stylesheet" type="text/css" href="p1.css">
+    </head>
+
+<body>
+
+<div class="centered">
+<h2>Sing Up</h2>
+<br>
+<form>
+    <div>
+    <label for="cname">Full name</label><br>
+    <input type="text"  name="cname"  pattern="[A-Za-záéíóúÁÉÍÓÚÑn]{3,}[ ]{1}[A-Za-záéíóúÁÉÍÓÚÑn]{3,}" title="Two words of at least 3 letters (ASCI letters and accented vowels or ñÑ)"><br>
+    <label for="clogin">Login name</label><br>
+    <input type="text"  name="clogin"><br>
+    <label for="cpasswd">Password (pureba de texto largusisisisimo=)</label><br>
+    <input type="password"  name="cpasswd"><br>
+    <label for="cdni">DNI</label><br>
+    <input type="text"  name="ctlph"><br>
+    <label for="cemail">Email address</label><br>
+    <input type="email"  name="cemail"><br>
+    <label for="cfile">Picture</label><br>
+    <input type="file" name="cfile"><br>
+
+    </div>
+
+    <div>
+    <p>Mark your age group</p>
+    <input type="radio" id="cage1" name="cage" >Less than 25<br>
+    <input type="radio" id="cage2" name="cage" >Between 25 and 40<br>
+    <input type="radio" id="cage3" name="cage" >Between 40 and 60<br>
+    <input type="radio" id="cage4" name="cage" >More than 60<br>
+
+    </div>
+    <div>
+    
+    <p>Select your preferred movie genres</p>
+
+    <input type="checkbox" id="cgenre" name="cgenre" value="Pop">Pop<br>
+    <input type="checkbox" id="cgenre2" name="cgenre" value="Rock">Rock<br>
+    <input type="checkbox" id="cgenre3" name="cgenre" value="Country">Country<br>
+    <input type="checkbox" id="cgenre4" name="cgenre" value="Rap">Rap<br>
+    <input type="checkbox" id="cgenre5" name="cgenre" value="Soul">Soul<br>
+    <input type="checkbox" id="cgenreall" name="cgenre" value="Check all">Check all<br>
+    </div>
+
+    <div>
+        <p>Comments </p>
+        <textarea name="ccomment"  cols="30" rows="5"></textarea>
+        <br>
+
+        <label for="cInternet">Select internet provider:</label>
+        <select  name="cInternet">
+            <option value="R">R</option>
+            <option value="Movistar">Movistar</option>
+            <option value="Vodafone">Vodafone</option>
+            <option value="Orange">Orange</option>
+        </select>
+
+    </div>
+
+    <div>
+        <p>Select the submission method</p>
+        <input type="radio" id="cmethodGET"  name="cmethod" >GET<br>
+        <input type="radio" id="cmethodPOST"  name="cmethod" >POST<br>
+        <p>Select the submission encoding</p>
+        <input type="radio" id="cencondingAPPL"  name="cencoding" >APPL<br>
+        <input type="radio" id="cencondingMULT"  name="cencoding" >MULT<br>
+        
+
+    </div>
+
+    <div>
+        <input type="hidden" name="cbrowser" >
+        <input type="hidden" name="cdate" >
+    </div>
+        
+    <div>
+        <input class="button"  type="reset" id="btnReset" value="Reset"> <input class="button" type="submit" id="btnSubmit" value="Submit" onclick="checkformats()">
+
+    </div>
+
+    
+
+</form>
+</div>
+<h4 class =footer>
+    Juan Pontón Rodríguez    
+</h4>
+</body>
+</html>
