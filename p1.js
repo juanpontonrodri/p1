@@ -10,26 +10,33 @@ function validacion(){
   alert(text1);
 }
 
-function checkall(){
+function check_boxes(){
   if(document.getElementById("cgenreall").checked==true){
     var boxes=document.getElementsByName("cgenre");
     
-    array.forEach(element => {
+    boxes.forEach(element => {
       element.checked=true;
     });
+    document.getElementById('cgenreunall').checked=false;
+
 }}
 
-function uncheckall(){
-  console.log("uncheckall");
-  if(document.getElementById("cgenreall").checked==true){
+function uncheck_boxes(){
+  if(document.getElementById('cgenreunall').checked==true){
     var boxes=document.getElementsByName("cgenre");
-    for(var i=0;i<boxes.length;i++){
-      boxes[i].checked=false;
-    }
-    
+    boxes.forEach(element => {
+      element.checked=false;
+    });
+    document.getElementById("cgenreall").checked=false;
+
   }
+
 }
 
+function check_only() { 
+  document.getElementById('cgenreunall').checked=false;
+  document.getElementById("cgenreall").checked=false;
+  }
 
 
 function get_function(){
