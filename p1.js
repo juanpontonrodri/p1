@@ -1,17 +1,35 @@
 
 function validacion(){
+  var correcto=new Boolean(true);
+  var text1="";
+  if(!check_dni()){
+    text1+="DNI is not valid. Correct format:12345678A\n";
 
-  if(checkdni()==false){
-    let text1="DNI is not valid. Correct format:12345678A"
-    return false;
+    correcto=false;
   }
 
+  if(!check_login()){
+    text1+="clogin wrong  \n";
 
+    correcto=false;
+  }
+
+  if(!check_passwd()){
+    text1+="cpasswd wrong  \n";
+
+    correcto=false;
+  }
+
+  
+
+  if(!correcto){
   alert(text1);
+  return false;
+  }
 }
 
 function check_boxes(){
-  if(document.getElementById("cgenreall").checked==true){
+  if(document.getElementById('cgenreall').checked){
     var boxes=document.getElementsByName("cgenre");
     
     boxes.forEach(element => {
@@ -22,12 +40,12 @@ function check_boxes(){
 }}
 
 function uncheck_boxes(){
-  if(document.getElementById('cgenreunall').checked==true){
+  if(document.getElementById('cgenreunall').checked){
     var boxes=document.getElementsByName("cgenre");
     boxes.forEach(element => {
       element.checked=false;
     });
-    document.getElementById("cgenreall").checked=false;
+    document.getElementById('cgenreall').checked=false;
 
   }
 
@@ -35,7 +53,7 @@ function uncheck_boxes(){
 
 function check_only() { 
   document.getElementById('cgenreunall').checked=false;
-  document.getElementById("cgenreall").checked=false;
+  document.getElementById('cgenreall').checked=false;
   }
 
 
@@ -52,27 +70,38 @@ function post_function(){
     document.getElementById('reg_form').enctype="multipart/form-data";
 }
 
-/*
-function checkformats() {
-    var clogin = document-getElementByName('clogin');
-    if (clogin.length == 0) return true;
-		var re = RegExp("^[6-9]\\d{8}$");
-    if (tel.match(re) == null) {
-      alert("Phone number has a wrong format");
-      return false;
-    }
-    else return true;
-}
-*/
 
-function checkdni(){
-    console.log("cheking")
-    cdni=document.getElementsByName('cdni');
+
+function check_login() {
+  if(document.getElementById('clogin').value.length == 0) return true;
+		var cklogin = /^[a-z0-9]{4,8}$/;
+    if (cklogin.test(document.getElementById('clogin').value)) {
+      return true;
+    }
+    else return false;
+    
+}
+
+
+function check_passwd() {
+  if(document.getElementById('cpasswd').value.length == 0) return true;
+		var ckpasswd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[+,-,*,/]){6,12}/;
+    if (ckpasswd.test(document.getElementById('cpasswd').value)) {
+      return true;
+    }
+    else return false;
+    
+}
+
+function check_dni(){
+  if (document.getElementById('cdni').value.length == 0) return true;
+    var cdni=document.getElementById('cdni').value;
     var numeros = /^[0-7]{1}[0-9]{7}[A-Za-z]{1}$/;
     var letra= /[a-zA-Z]/;
-    if((cdni="") || ((numeros.test(cdni.substring(0,cdni.lenght-1))==true) && (letra.test(cdni.charAt(cdni.length-1))==true))){
+    if((numeros.test(cdni.substring(0,cdni.lenght-1)) && letra.test(cdni.charAt(cdni.length-1)))){
         return true;
     }
     else 
+
     return false;
 }

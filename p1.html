@@ -18,11 +18,11 @@
     Full name<br>
     <input type="text"  name="cname"  pattern="[A-Za-záéíóúÁÉÍÓÚÑn]{3,}[ ]{1}[A-Za-záéíóúÁÉÍÓÚÑn]{3,}" title="Two words of at least 3 letters (ASCI letters and accented vowels or ñÑ)"><br>
     Login name<br>
-    <input type="text"  name="clogin"><br>
+    <input type="text" id="clogin" name="clogin"><br>
     Password<br>
-    <input type="password"  name="cpasswd"><br>
+    <input type="password" id="cpasswd" name="cpasswd"><br>
     DNI<br>
-    <input type="text"  name="cdni"><br>
+    <input type="text" id="cdni" name="cdni"><br>
     Email address<br>
     <input type="email"  name="cemail"><br>
     Picture<br>
@@ -59,6 +59,7 @@
 
         Select internet provider:
         <select  name="cInternet">
+            <option value=""></option>
             <option value="R">R</option>
             <option value="Movistar">Movistar</option>
             <option value="Vodafone">Vodafone</option>
