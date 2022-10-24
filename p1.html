@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>p1.html</title>
         <link rel="stylesheet" type="text/css" href="p1.css">
+        <script src="p1.js"></script>
     </head>
 
 <body>
@@ -12,19 +13,19 @@
 <div class="centered">
 <h2>Sing Up</h2>
 <br>
-<form>
+<form action="http://alberto.gil.webs.uvigo.es/SINT/22-23/p1.php"  name="reg_form" onsubmit="return validacion()">
     <div>
-    <label for="cname">Full name</label><br>
+    Full name<br>
     <input type="text"  name="cname"  pattern="[A-Za-záéíóúÁÉÍÓÚÑn]{3,}[ ]{1}[A-Za-záéíóúÁÉÍÓÚÑn]{3,}" title="Two words of at least 3 letters (ASCI letters and accented vowels or ñÑ)"><br>
-    <label for="clogin">Login name</label><br>
+    Login name<br>
     <input type="text"  name="clogin"><br>
-    <label for="cpasswd">Password (pureba de texto largusisisisimo=)</label><br>
+    Password<br>
     <input type="password"  name="cpasswd"><br>
-    <label for="cdni">DNI</label><br>
-    <input type="text"  name="ctlph"><br>
-    <label for="cemail">Email address</label><br>
+    DNI<br>
+    <input type="text"  name="cdni"><br>
+    Email address<br>
     <input type="email"  name="cemail"><br>
-    <label for="cfile">Picture</label><br>
+    Picture<br>
     <input type="file" name="cfile"><br>
 
     </div>
@@ -41,12 +42,14 @@
     
     <p>Select your preferred movie genres</p>
 
-    <input type="checkbox" id="cgenre" name="cgenre" value="Pop">Pop<br>
+    <input type="checkbox" id="cgenre1" name="cgenre" value="Pop">Pop<br>
     <input type="checkbox" id="cgenre2" name="cgenre" value="Rock">Rock<br>
     <input type="checkbox" id="cgenre3" name="cgenre" value="Country">Country<br>
     <input type="checkbox" id="cgenre4" name="cgenre" value="Rap">Rap<br>
     <input type="checkbox" id="cgenre5" name="cgenre" value="Soul">Soul<br>
-    <input type="checkbox" id="cgenreall" name="cgenre" value="Check all">Check all<br>
+    <input type="checkbox" id="cgenreall" name="checkall" value="Check all" onclick="checkall()">Check all<br>
+    <input type="checkbox" id="cgenreunall" name="uncheckall" value="Uncheck all" onclick="uncheckall()">Uncheck all<br>
+
     </div>
 
     <div>
@@ -54,7 +57,7 @@
         <textarea name="ccomment"  cols="30" rows="5"></textarea>
         <br>
 
-        <label for="cInternet">Select internet provider:</label>
+        Select internet provider:
         <select  name="cInternet">
             <option value="R">R</option>
             <option value="Movistar">Movistar</option>
@@ -81,7 +84,7 @@
     </div>
         
     <div>
-        <input class="button"  type="reset" id="btnReset" value="Reset"> <input class="button" type="submit" id="btnSubmit" value="Submit" onclick="checkformats()">
+        <input class="button"  type="reset" id="btnReset" value="Reset"> <input class="button" type="submit" id="btnSubmit" value="Submit">
 
     </div>
 
