@@ -3,19 +3,19 @@ function validacion(){
   var correcto=new Boolean(true);
   var text1="";
   if(!check_dni()){
-    text1+="DNI is not valid. Correct format:12345678A\n";
+    text1+="DNI has wrong format. 8 digits starting with a number between 0 and 7 and additional non-accented ASCII letter (e.g., 12345678A)\n\n";
 
     correcto=false;
   }
 
   if(!check_login()){
-    text1+="Login username has wrong format: between 4 and 8 characters (only ASCII lowercase letters and numbers)   \n";
+    text1+="Login username has wrong format: between 4 and 8 characters (only ASCII lowercase letters and numbers) \n  \n";
 
     correcto=false;
   }
 
   if(!check_passwd()){
-    text1+="Passwd has wrong format: between 6 and 12 characters (at least one uppercase letter, one lowercase letter (in both cases ASCII letters only, no accents), one number, and one symbol from set “+-*/” \n";
+    text1+="Passwd has wrong format: between 6 and 12 characters (at least one uppercase letter, one lowercase letter (in both cases ASCII letters only, no accents), one number, and one symbol from set “+-*/” \n\n";
 
     correcto=false;
   }
@@ -57,17 +57,18 @@ function check_only() {
   }
 
 
-function get_function(){
-    document.getElementById('multipart').disabled = true; /Si uso get no puedo usar multipart/
-    document.getElementById('reg_form').method="get";
-    document.getElementById('reg_form').enctype="application/x-www-form-urlencoded";
+function get(){
+  document.getElementById('cencondingMULT').disabled = true; 
+  document.getElementById('reg_form').method="get";
+  document.getElementById('reg_form').enctype="application/x-www-form-urlencoded";
 }
 
 
-function post_function(){
-    document.getElementById('multipart').disabled = false;
-    document.getElementById('reg_form').method="post";
-    document.getElementById('reg_form').enctype="multipart/form-data";
+function post(){
+  document.getElementById('cencondingMULT').disabled = false;
+  document.getElementById('reg_form').method="post";
+  document.getElementById('reg_form').enctype="multipart/form-data";
+    
 }
 
 
