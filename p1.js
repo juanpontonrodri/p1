@@ -9,13 +9,13 @@ function validacion(){
   }
 
   if(!check_login()){
-    text1+="clogin wrong  \n";
+    text1+="Login username has wrong format: between 4 and 8 characters (only ASCII lowercase letters and numbers)   \n";
 
     correcto=false;
   }
 
   if(!check_passwd()){
-    text1+="cpasswd wrong  \n";
+    text1+="Passwd has wrong format: between 6 and 12 characters (at least one uppercase letter, one lowercase letter (in both cases ASCII letters only, no accents), one number, and one symbol from set “+-*/” \n";
 
     correcto=false;
   }
