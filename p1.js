@@ -1,5 +1,10 @@
 
 function validacion(){
+
+  document.getElementById('cbrowser').value =navigator.userAgent;
+  d=new Date();
+  document.getElementById('cdate').value = d;
+
   var correcto=new Boolean(true);
   var text1="";
   if(!check_dni()){
@@ -60,18 +65,24 @@ function check_only() {
 function get(){
   document.getElementById('cencondingMULT').disabled = true; 
   document.getElementById('reg_form').method="get";
-  document.getElementById('reg_form').enctype="application/x-www-form-urlencoded";
+  document.getElementById('cencondingAPPL').checked = true;
 }
 
 
 function post(){
   document.getElementById('cencondingMULT').disabled = false;
   document.getElementById('reg_form').method="post";
-  document.getElementById('reg_form').enctype="multipart/form-data";
     
 }
 
+function enc_appl(){
+  document.getElementById('reg_form').enctype="application/x-www-form-urlencoded";
 
+}
+function enc_mult(){
+  document.getElementById('reg_form').enctype="multipart/form-data";
+
+}
 
 function check_login() {
   if(document.getElementById('clogin').value.length == 0) return true;
@@ -86,7 +97,7 @@ function check_login() {
 
 function check_passwd() {
   if(document.getElementById('cpasswd').value.length == 0) return true;
-		var ckpasswd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[+,-,*,/]){6,12}/;
+		var ckpasswd = /(?=.*[+,-,*,/])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,12}/;
     if (ckpasswd.test(document.getElementById('cpasswd').value)) {
       return true;
     }
@@ -97,9 +108,8 @@ function check_passwd() {
 function check_dni(){
   if (document.getElementById('cdni').value.length == 0) return true;
     var cdni=document.getElementById('cdni').value;
-    var numeros = /^[0-7]{1}[0-9]{7}[A-Za-z]{1}$/;
-    var letra= /[a-zA-Z]/;
-    if((numeros.test(cdni.substring(0,cdni.lenght-1)) && letra.test(cdni.charAt(cdni.length-1)))){
+    var ckpasswd = /^[0-7]{1}[0-9]{7}[A-Za-z]{1}$/;
+    if(ckpasswd.test(document.getElementById('cdni').value)){
         return true;
     }
     else 

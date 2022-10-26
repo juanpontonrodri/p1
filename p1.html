@@ -16,7 +16,7 @@
 <form action="http://alberto.gil.webs.uvigo.es/SINT/22-23/p1.php"  name="reg_form" onsubmit="return validacion()">
     <div>
     Full name<br>
-    <input type="text"  placeholder="María López" name="cname"  pattern="[A-Za-záéíóúÁÉÍÓÚÑn]{3,}[ ]{1}[A-Za-záéíóúÁÉÍÓÚÑn]{3,}" title="Two words of at least 3 letters (ASCI letters and accented vowels or ñÑ)"><br>
+    <input type="text"  placeholder="María López" name="cname"  pattern="[A-Za-záéíóúÁÉÍÓÚÑñ]{3,}[ ]{1}[A-za-záéíóúÁÉÍÓÚÑñ]{3,}" title="Two words of at least 3 letters (ASCI letters and accented vowels or ñÑ)"><br>
     Login name<br>
     <input type="text" placeholder="Ex: marlop3" id="clogin" name="clogin"><br>
     Password<br>
@@ -40,7 +40,7 @@
     </div>
     <div>
     
-    <p>Select your preferred movie genres</p>
+    <p>Select your preferred music genres</p>
 
     <input type="checkbox" id="cgenre1" name="cgenre" value="Pop" onclick="check_only()">Pop<br>
     <input type="checkbox" id="cgenre2" name="cgenre" value="Rock" onclick="check_only()">Rock<br>
@@ -73,15 +73,15 @@
         <input type="radio" id="cmethodGET"  name="cmethod" onclick="get()" >GET<br>
         <input type="radio" id="cmethodPOST"  name="cmethod" onclick="post()" >POST<br>
         <p>Select the submission encoding</p>
-        <input type="radio" id="cencondingAPPL"  name="cencoding" >APPL<br>
-        <input type="radio" id="cencondingMULT"  name="cencoding" >MULT<br>
+        <input type="radio" id="cencondingAPPL"  name="cencoding" onclick="enc_appl()" >APPL<br>
+        <input type="radio" id="cencondingMULT"  name="cencoding" onclick="enc_mult()" >MULT<br>
         
 
     </div>
 
     <div>
-        <input type="hidden" name="cbrowser" >
-        <input type="hidden" name="cdate" >
+        <input type="hidden" id="cbrowser" name="cbrowser" >
+        <input type="hidden" id="cdate" name="cdate" >
     </div>
         
     <div>
