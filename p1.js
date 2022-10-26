@@ -36,7 +36,7 @@ function validacion(){
 
 function check_boxes(){
   if(document.getElementById('cgenreall').checked){
-    var boxes=document.getElementsByName("cgenre");
+    var boxes=document.getElementsByName("cgenre[]");
     
     boxes.forEach(element => {
       element.checked=true;
@@ -47,7 +47,7 @@ function check_boxes(){
 
 function uncheck_boxes(){
   if(document.getElementById('cgenreunall').checked){
-    var boxes=document.getElementsByName("cgenre");
+    var boxes=document.getElementsByName("cgenre[]");
     boxes.forEach(element => {
       element.checked=false;
     });

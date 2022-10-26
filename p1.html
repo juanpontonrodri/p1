@@ -32,21 +32,21 @@
 
     <div>
     <p>Mark your age group</p>
-    <input type="radio" id="cage1" name="cage" >Less than 25<br>
-    <input type="radio" id="cage2" name="cage" >Between 25 and 40<br>
-    <input type="radio" id="cage3" name="cage" >Between 40 and 60<br>
-    <input type="radio" id="cage4" name="cage" >More than 60<br>
+    <input type="radio" id="cage1" name="cage" value="Less than 25">Less than 25<br>
+    <input type="radio" id="cage2" name="cage" value="Between 25 and 40" >Between 25 and 40<br>
+    <input type="radio" id="cage3" name="cage" value="Between 40 and 60">Between 40 and 60<br>
+    <input type="radio" id="cage4" name="cage" value="More than 60">More than 60<br>
 
     </div>
     <div>
     
     <p>Select your preferred music genres</p>
 
-    <input type="checkbox" id="cgenre1" name="cgenre" value="Pop" onclick="check_only()">Pop<br>
-    <input type="checkbox" id="cgenre2" name="cgenre" value="Rock" onclick="check_only()">Rock<br>
-    <input type="checkbox" id="cgenre3" name="cgenre" value="Country" onclick="check_only()">Country<br>
-    <input type="checkbox" id="cgenre4" name="cgenre" value="Rap" onclick="check_only()">Rap<br>
-    <input type="checkbox" id="cgenre5" name="cgenre" value="Soul" onclick="check_only()">Soul<br>
+    <input type="checkbox" id="cgenre1" name="cgenre[]" value="Pop" onclick="check_only()">Pop<br>
+    <input type="checkbox" id="cgenre2" name="cgenre[]" value="Rock" onclick="check_only()">Rock<br>
+    <input type="checkbox" id="cgenre3" name="cgenre[]" value="Country" onclick="check_only()">Country<br>
+    <input type="checkbox" id="cgenre4" name="cgenre[]" value="Rap" onclick="check_only()">Rap<br>
+    <input type="checkbox" id="cgenre5" name="cgenre[]" value="Soul" onclick="check_only()">Soul<br>
     <input type="checkbox" class="call" id="cgenreall" name="checkall" value="Check all" onclick="check_boxes()">Check all<br>
     <input type="checkbox" class="call" id="cgenreunall" name="uncheckall" value="Uncheck all" onclick="uncheck_boxes()">Uncheck all<br>
 
@@ -59,7 +59,6 @@
 
         Select internet provider:
         <select  name="cInternet">
-            <option value=""></option>
             <option value="R">R</option>
             <option value="Movistar">Movistar</option>
             <option value="Vodafone">Vodafone</option>
@@ -70,11 +69,11 @@
 
     <div>
         <p>Select the submission method</p>
-        <input type="radio" id="cmethodGET"  name="cmethod" onclick="get()" >GET<br>
-        <input type="radio" id="cmethodPOST"  name="cmethod" onclick="post()" >POST<br>
+        <input type="radio" id="cmethodGET"  name="cmethod" value ="GET" onclick="get()" >GET<br>
+        <input type="radio" id="cmethodPOST"  name="cmethod" value="POST" onclick="post()" >POST<br>
         <p>Select the submission encoding</p>
-        <input type="radio" id="cencondingAPPL"  name="cencoding" onclick="enc_appl()" >APPL<br>
-        <input type="radio" id="cencondingMULT"  name="cencoding" onclick="enc_mult()" >MULT<br>
+        <input type="radio" id="cencondingAPPL"  name="cencoding" value="application/x-www-form-urlencoded" onclick="enc_appl()" >APPL<br>
+        <input type="radio" id="cencondingMULT"  name="cencoding" value="multipart/form-data" onclick="enc_mult()" >MULT<br>
         
 
     </div>
