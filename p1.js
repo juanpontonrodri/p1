@@ -20,6 +20,7 @@ function validacion(){
   }
 
   if(!check_passwd()){
+
     text1+="Passwd has wrong format: between 6 and 12 characters (at least one uppercase letter, one lowercase letter (in both cases ASCII letters only, no accents), one number, and one symbol from set “+-*/” \n\n";
 
     correcto=false;
@@ -97,12 +98,15 @@ function check_login() {
 
 function check_passwd() {
   if(document.getElementById('cpasswd').value.length == 0) return true;
-		var ckpasswd = /(?=.*[+,-,*,/])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,12}/;
+		var ckpasswd = /(?=.*[-,+,*,/])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,12}/;
     if (ckpasswd.test(document.getElementById('cpasswd').value)) {
+
       return true;
     }
-    else return false;
-    
+    else {
+
+      return false;
+    }
 }
 
 function check_dni(){
@@ -112,7 +116,5 @@ function check_dni(){
     if(ckpasswd.test(document.getElementById('cdni').value)){
         return true;
     }
-    else 
-
-    return false;
+    else return false;
 }
