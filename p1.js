@@ -64,14 +64,11 @@ function check_only() {
 
 
 function get(){
-  document.getElementById('cencondingMULT').disabled = true; 
   document.getElementById('reg_form').method="get";
-  document.getElementById('cencondingAPPL').checked = true;
 }
 
 
 function post(){
-  document.getElementById('cencondingMULT').disabled = false;
   document.getElementById('reg_form').method="post";
     
 }
